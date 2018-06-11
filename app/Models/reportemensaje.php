@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class reportehistorial extends Model
 {
     //
-    protected $table = 'reportehistorials';
+    protected $table = 'reportemensaje';
     protected $primarykey = 'id';
     public $timestamps = true;
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'id', 'usuario_id', 'fecha'
+        'id', 'usuarioentidad_id','enlacemapa','fechareporte'
     ];
 }

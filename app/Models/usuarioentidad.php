@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class usuarioentidad extends Model
 {
     //
-    protected $table = 'usuarioentidads';
+    protected $table = 'usuarioentidad';
     protected $primarykey = 'id';
     public $timestamps = true;
     protected $dates = ['deleted_at'];

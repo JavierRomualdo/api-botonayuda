@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class entidad extends Model
 {
     //
-    protected $table = 'entidads';
+    protected $table = 'entidades';
     protected $primarykey = 'id';
     public $timestamps = true;
     protected $dates = ['deleted_at'];
