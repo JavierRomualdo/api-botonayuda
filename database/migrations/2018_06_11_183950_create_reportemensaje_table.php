@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuarioentidadsTable extends Migration
+class CreateReportemensajeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateUsuarioentidadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('usuarioentidads', function (Blueprint $table) {
+        Schema::create('reportemensaje', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('usuario_id')->unsigned();
-            $table->integer('entidad_id')->unsigned();
+            $table->integer('usuarioentidad_id')->unsigned();
+            $table->string('enlacemapa', 250);
+            $table->date('fechareporte');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('usuario_id')->references('id')->on('usuarios');
-            $table->foreign('entidad_id')->references('id')->on('entidads');
+            $table->foreign('usuarioentidad_id')->references('id')->on('usuarioentidad');
+        
         });
     }
 
@@ -32,6 +33,6 @@ class CreateUsuarioentidadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usuarioentidads');
+     Schema::dropIfExists('reportemensaje');   //
     }
 }
